@@ -12,7 +12,7 @@ So, [vote for Clover!](http://vote-clover.surge.sh)!
 
 3. On the project's main directory:
 
-```lein cljsbuild watch```
+```lein cljsbuild auto```
 
 4. Open index.html file in the browser
 
