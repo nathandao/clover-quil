@@ -1,104 +1,96 @@
-// Compiled by ClojureScript 1.9.473 {}
+// Compiled by ClojureScript 1.9.473 {:static-fns true, :optimize-constants true}
 goog.provide('clover.core');
 goog.require('cljs.core');
+goog.require('cljs.core.constants');
 goog.require('quil.core');
 goog.require('quil.middleware');
 clover.core.generate_color = (function clover$core$generate_color(max){
-return new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"r","r",-471384190),cljs.core.rand_int.call(null,max),new cljs.core.Keyword(null,"g","g",1738089905),cljs.core.rand_int.call(null,max),new cljs.core.Keyword(null,"b","b",1482224470),cljs.core.rand_int.call(null,max)], null);
+return new cljs.core.PersistentArrayMap(null, 3, [cljs.core.cst$kw$r,cljs.core.rand_int(max),cljs.core.cst$kw$g,cljs.core.rand_int(max),cljs.core.cst$kw$b,cljs.core.rand_int(max)], null);
 });
 clover.core.frame_rate = (60);
 clover.core.init_t = (clover.core.frame_rate / (20));
-clover.core.color_1 = clover.core.generate_color.call(null,(255));
-clover.core.color_2 = new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"r","r",-471384190),((255) - new cljs.core.Keyword(null,"r","r",-471384190).cljs$core$IFn$_invoke$arity$1(clover.core.color_1)),new cljs.core.Keyword(null,"g","g",1738089905),((((255) - new cljs.core.Keyword(null,"g","g",1738089905).cljs$core$IFn$_invoke$arity$1(clover.core.color_1)) / 1.5) | (0)),new cljs.core.Keyword(null,"b","b",1482224470),((255) - new cljs.core.Keyword(null,"b","b",1482224470).cljs$core$IFn$_invoke$arity$1(clover.core.color_1))], null);
+clover.core.color_1 = clover.core.generate_color((255));
+clover.core.color_2 = new cljs.core.PersistentArrayMap(null, 3, [cljs.core.cst$kw$r,((255) - cljs.core.cst$kw$r.cljs$core$IFn$_invoke$arity$1(clover.core.color_1)),cljs.core.cst$kw$g,((((255) - cljs.core.cst$kw$g.cljs$core$IFn$_invoke$arity$1(clover.core.color_1)) / 1.5) | (0)),cljs.core.cst$kw$b,((((255) - cljs.core.cst$kw$b.cljs$core$IFn$_invoke$arity$1(clover.core.color_1)) / 1.9) | (0))], null);
 clover.core.combine_color = (function clover$core$combine_color(color_1,color_2,ratio){
 var ratio__$1 = (((ratio < (1)))?ratio:((1) / ratio));
-var r1 = new cljs.core.Keyword(null,"r","r",-471384190).cljs$core$IFn$_invoke$arity$1(color_1);
-var g1 = new cljs.core.Keyword(null,"g","g",1738089905).cljs$core$IFn$_invoke$arity$1(color_1);
-var b1 = new cljs.core.Keyword(null,"b","b",1482224470).cljs$core$IFn$_invoke$arity$1(color_1);
-var r2 = new cljs.core.Keyword(null,"r","r",-471384190).cljs$core$IFn$_invoke$arity$1(color_2);
-var g2 = new cljs.core.Keyword(null,"g","g",1738089905).cljs$core$IFn$_invoke$arity$1(color_2);
-var b2 = new cljs.core.Keyword(null,"b","b",1482224470).cljs$core$IFn$_invoke$arity$1(color_2);
-return new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"r","r",-471384190),(((r2 * ratio__$1) + (r1 * ((1) - ratio__$1))) | (0)),new cljs.core.Keyword(null,"g","g",1738089905),(((g2 * ratio__$1) + (g1 * ((1) - ratio__$1))) | (0)),new cljs.core.Keyword(null,"b","b",1482224470),(((b2 * ratio__$1) + (b1 * ((1) - ratio__$1))) | (0))], null);
+return new cljs.core.PersistentArrayMap(null, 3, [cljs.core.cst$kw$r,(((cljs.core.cst$kw$r.cljs$core$IFn$_invoke$arity$1(color_2) * ratio__$1) + (cljs.core.cst$kw$r.cljs$core$IFn$_invoke$arity$1(color_1) * ((1) - ratio__$1))) | (0)),cljs.core.cst$kw$g,(((cljs.core.cst$kw$g.cljs$core$IFn$_invoke$arity$1(color_2) * ratio__$1) + (cljs.core.cst$kw$g.cljs$core$IFn$_invoke$arity$1(color_1) * ((1) - ratio__$1))) | (0)),cljs.core.cst$kw$b,(((cljs.core.cst$kw$b.cljs$core$IFn$_invoke$arity$1(color_2) * ratio__$1) + (cljs.core.cst$kw$b.cljs$core$IFn$_invoke$arity$1(color_1) * ((1) - ratio__$1))) | (0))], null);
 });
 clover.core.update_stroke_color = (function clover$core$update_stroke_color(color_1,color_2,ratio){
-var combined_color = clover.core.combine_color.call(null,color_1,color_2,ratio);
-return quil.core.stroke.call(null,new cljs.core.Keyword(null,"r","r",-471384190).cljs$core$IFn$_invoke$arity$1(combined_color),new cljs.core.Keyword(null,"g","g",1738089905).cljs$core$IFn$_invoke$arity$1(combined_color),new cljs.core.Keyword(null,"b","b",1482224470).cljs$core$IFn$_invoke$arity$1(combined_color));
+var combined_color = clover.core.combine_color(color_1,color_2,ratio);
+return quil.core.stroke.cljs$core$IFn$_invoke$arity$3(cljs.core.cst$kw$r.cljs$core$IFn$_invoke$arity$1(combined_color),cljs.core.cst$kw$g.cljs$core$IFn$_invoke$arity$1(combined_color),cljs.core.cst$kw$b.cljs$core$IFn$_invoke$arity$1(combined_color));
 });
 clover.core.f = (function clover$core$f(t){
-var r = ((quil.core.sin.call(null,((2) * t)) + (0.25 * quil.core.sin.call(null,((6) * t)))) * (100));
+var r = ((quil.core.sin(((2) * t)) + (0.25 * quil.core.sin(((6) * t)))) * (100));
 var step = ((1) / ((t / 3.14) / (10)));
-var c = clover.core.combine_color.call(null,clover.core.color_1,clover.core.color_2,clover.core.ratio);
-clover.core.update_stroke_color.call(null,clover.core.color_1,clover.core.color_2,step);
+clover.core.update_stroke_color(clover.core.color_1,clover.core.color_2,step);
 
-return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [((r * quil.core.cos.call(null,t)) / step),((r * quil.core.sin.call(null,t)) / step)], null);
+return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [((r * quil.core.cos(t)) / step),((r * quil.core.sin(t)) / step)], null);
 });
 clover.core.draw = (function clover$core$draw(){
-var tr__9318__auto__ = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(quil.core.width.call(null) / (2)),(quil.core.height.call(null) / (2))], null);
-quil.core.push_matrix.call(null);
+var tr__10713__auto__ = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(quil.core.width() / (2)),(quil.core.height() / (2))], null);
+quil.core.push_matrix();
 
-try{quil.core.translate.call(null,tr__9318__auto__);
+try{quil.core.translate.cljs$core$IFn$_invoke$arity$1(tr__10713__auto__);
 
-var t = (quil.core.frame_count.call(null) / (20));
-return quil.core.line.call(null,clover.core.f.call(null,t),clover.core.f.call(null,(t + 0.1)));
-}finally {quil.core.pop_matrix.call(null);
+var t = (quil.core.frame_count() / (20));
+return quil.core.line.cljs$core$IFn$_invoke$arity$2(clover.core.f(t),clover.core.f((t + 0.1)));
+}finally {quil.core.pop_matrix();
 }});
 clover.core.setup = (function clover$core$setup(){
-quil.core.frame_rate.call(null,clover.core.frame_rate);
+quil.core.frame_rate(clover.core.frame_rate);
 
-clover.core.update_stroke_color.call(null,clover.core.color_1,clover.core.color_2,clover.core.init_t);
+clover.core.update_stroke_color(clover.core.color_1,clover.core.color_2,clover.core.init_t);
 
-return quil.core.background.call(null,(0),(0),(0));
+return quil.core.background.cljs$core$IFn$_invoke$arity$3((0),(0),(0));
 });
 clover.core.clover = (function clover$core$clover(){
-return quil.sketch.sketch.call(null,new cljs.core.Keyword(null,"host","host",-1558485167),"clover",new cljs.core.Keyword(null,"size","size",1098693007),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(400),(400)], null),new cljs.core.Keyword(null,"setup","setup",1987730512),((cljs.core.fn_QMARK_.call(null,clover.core.setup))?(function() { 
-var G__9990__delegate = function (args){
-return cljs.core.apply.call(null,clover.core.setup,args);
+return quil.sketch.sketch.cljs$core$IFn$_invoke$arity$variadic(cljs.core.array_seq([cljs.core.cst$kw$host,"clover",cljs.core.cst$kw$size,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(400),(400)], null),cljs.core.cst$kw$setup,((cljs.core.fn_QMARK_(clover.core.setup))?(function() { 
+var G__10810__delegate = function (args){
+return cljs.core.apply.cljs$core$IFn$_invoke$arity$2(clover.core.setup,args);
 };
-var G__9990 = function (var_args){
+var G__10810 = function (var_args){
 var args = null;
 if (arguments.length > 0) {
-var G__9991__i = 0, G__9991__a = new Array(arguments.length -  0);
-while (G__9991__i < G__9991__a.length) {G__9991__a[G__9991__i] = arguments[G__9991__i + 0]; ++G__9991__i;}
-  args = new cljs.core.IndexedSeq(G__9991__a,0);
+var G__10811__i = 0, G__10811__a = new Array(arguments.length -  0);
+while (G__10811__i < G__10811__a.length) {G__10811__a[G__10811__i] = arguments[G__10811__i + 0]; ++G__10811__i;}
+  args = new cljs.core.IndexedSeq(G__10811__a,0);
 } 
-return G__9990__delegate.call(this,args);};
-G__9990.cljs$lang$maxFixedArity = 0;
-G__9990.cljs$lang$applyTo = (function (arglist__9992){
-var args = cljs.core.seq(arglist__9992);
-return G__9990__delegate(args);
+return G__10810__delegate.call(this,args);};
+G__10810.cljs$lang$maxFixedArity = 0;
+G__10810.cljs$lang$applyTo = (function (arglist__10812){
+var args = cljs.core.seq(arglist__10812);
+return G__10810__delegate(args);
 });
-G__9990.cljs$core$IFn$_invoke$arity$variadic = G__9990__delegate;
-return G__9990;
+G__10810.cljs$core$IFn$_invoke$arity$variadic = G__10810__delegate;
+return G__10810;
 })()
-:clover.core.setup),new cljs.core.Keyword(null,"draw","draw",1358331674),((cljs.core.fn_QMARK_.call(null,clover.core.draw))?(function() { 
-var G__9993__delegate = function (args){
-return cljs.core.apply.call(null,clover.core.draw,args);
+:clover.core.setup),cljs.core.cst$kw$draw,((cljs.core.fn_QMARK_(clover.core.draw))?(function() { 
+var G__10813__delegate = function (args){
+return cljs.core.apply.cljs$core$IFn$_invoke$arity$2(clover.core.draw,args);
 };
-var G__9993 = function (var_args){
+var G__10813 = function (var_args){
 var args = null;
 if (arguments.length > 0) {
-var G__9994__i = 0, G__9994__a = new Array(arguments.length -  0);
-while (G__9994__i < G__9994__a.length) {G__9994__a[G__9994__i] = arguments[G__9994__i + 0]; ++G__9994__i;}
-  args = new cljs.core.IndexedSeq(G__9994__a,0);
+var G__10814__i = 0, G__10814__a = new Array(arguments.length -  0);
+while (G__10814__i < G__10814__a.length) {G__10814__a[G__10814__i] = arguments[G__10814__i + 0]; ++G__10814__i;}
+  args = new cljs.core.IndexedSeq(G__10814__a,0);
 } 
-return G__9993__delegate.call(this,args);};
-G__9993.cljs$lang$maxFixedArity = 0;
-G__9993.cljs$lang$applyTo = (function (arglist__9995){
-var args = cljs.core.seq(arglist__9995);
-return G__9993__delegate(args);
+return G__10813__delegate.call(this,args);};
+G__10813.cljs$lang$maxFixedArity = 0;
+G__10813.cljs$lang$applyTo = (function (arglist__10815){
+var args = cljs.core.seq(arglist__10815);
+return G__10813__delegate(args);
 });
-G__9993.cljs$core$IFn$_invoke$arity$variadic = G__9993__delegate;
-return G__9993;
+G__10813.cljs$core$IFn$_invoke$arity$variadic = G__10813__delegate;
+return G__10813;
 })()
-:clover.core.draw));
+:clover.core.draw)], 0));
 });
 goog.exportSymbol('clover.core.clover', clover.core.clover);
 
-if(cljs.core.truth_(cljs.core.some.call(null,(function (p1__8147__8148__auto__){
-return cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"no-start","no-start",1381488856),p1__8147__8148__auto__);
+if(cljs.core.truth_(cljs.core.some((function (p1__9881__9882__auto__){
+return cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(cljs.core.cst$kw$no_DASH_start,p1__9881__9882__auto__);
 }),null))){
 } else {
-quil.sketch.add_sketch_to_init_list.call(null,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"fn","fn",-1175266204),clover.core.clover,new cljs.core.Keyword(null,"host-id","host-id",742376279),"clover"], null));
+quil.sketch.add_sketch_to_init_list(new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$fn,clover.core.clover,cljs.core.cst$kw$host_DASH_id,"clover"], null));
 }
-
-//# sourceMappingURL=core.js.map

@@ -1,6 +1,7 @@
-// Compiled by ClojureScript 1.9.473 {}
+// Compiled by ClojureScript 1.9.473 {:static-fns true, :optimize-constants true}
 goog.provide('quil.middleware');
 goog.require('cljs.core');
+goog.require('cljs.core.constants');
 goog.require('quil.middlewares.fun_mode');
 goog.require('quil.middlewares.navigation_3d');
 goog.require('quil.middlewares.navigation_2d');
@@ -10,7 +11,7 @@ goog.require('quil.middlewares.navigation_2d');
  *   mouse-click, etc) state-aware. See wiki for more details.
  */
 quil.middleware.fun_mode = (function quil$middleware$fun_mode(options){
-return quil.middlewares.fun_mode.fun_mode.call(null,options);
+return quil.middlewares.fun_mode.fun_mode(options);
 });
 /**
  * Enables navigation in 3D space. Similar to how it is done in
@@ -79,7 +80,7 @@ return quil.middlewares.fun_mode.fun_mode.call(null,options);
  *   https://github.com/quil/quil/wiki/Navigation-3D
  */
 quil.middleware.navigation_3d = (function quil$middleware$navigation_3d(options){
-return quil.middlewares.navigation_3d.navigation_3d.call(null,options);
+return quil.middlewares.navigation_3d.navigation_3d(options);
 });
 /**
  * Enables navigation over 2D sketch. Drag mouse to change the center of the
@@ -112,7 +113,5 @@ return quil.middlewares.navigation_3d.navigation_3d.call(null,options);
  *  :middleware [m/fun-mode m/navigation-2d])
  */
 quil.middleware.navigation_2d = (function quil$middleware$navigation_2d(options){
-return quil.middlewares.navigation_2d.navigation_2d.call(null,options);
+return quil.middlewares.navigation_2d.navigation_2d(options);
 });
-
-//# sourceMappingURL=middleware.js.map
